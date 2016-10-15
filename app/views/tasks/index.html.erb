@@ -1,14 +1,31 @@
   <!-- Affiche toutes les taches -->
 
-<%= link_to "Ajouter", new_task_path %>
-<%= %>
+<h1> DOOLT </h1>
+
+<table>
+	<tr>
+		<th> To-Do </th>
+		<th> Description </th>
+		<th> Date de fin </th>
+		<th> Temps restant</th>
+		<th>  </th>
+		<th>  </th>
+	</tr>
 
 <% @tasks.each do |t|%>
-
-	<p> <%= t.task_title %> </p>
-	<p> <%= t.task_description %> </p>
-	<p> <%= t.deadline %></p>
-	<% if t.done == true %>
-		<%= t.done %>
-	<% end %>
+	<tr>
+		<th> <%= t.task_title %> </th>
+		<th> <%= t.task_description %> </th>
+		<th> <%= t.deadline %> </th>
+		<th> <% if t.done == false %>
+				<%= 'Il reste x jours' %>
+			<% end %> </th>
+		<th> <%= link_to 'Modifier', edit_task_path(t) %> </th>
+		<th> <%= link_to 'Détruire', task_path(t), :confirm => 'Êtes-vous certain ?',
+		:method => :delete %> </th>
+	</tr>
 <% end %>
+</table>
+<br>
+
+<%= link_to "Ajouter", new_task_path %>
