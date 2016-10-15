@@ -1,0 +1,14 @@
+  <!-- Affiche toutes les taches -->
+
+<%= link_to "Ajouter", new_task_path %>
+<%= %>
+
+<% @tasks.each do |t|%>
+
+	<p> <%= t.task_title %> </p>
+	<p> <%= t.task_description %> </p>
+	<p> <%= t.deadline %></p>
+	<% if t.done == true %>
+		<%= t.done %>
+	<% end %>
+<% end %>
