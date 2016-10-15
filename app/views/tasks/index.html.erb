@@ -1,31 +1,42 @@
   <!-- Affiche toutes les taches -->
+<!DOCTYPE hmtl>
+<html>
 
-<h1> DOOLT </h1>
+<header>
+	<h1> Doolt </h1>
+</header>
 
-<table>
-	<tr>
-		<th> To-Do </th>
-		<th> Description </th>
-		<th> Date de fin </th>
-		<th> Temps restant</th>
-		<th>  </th>
-		<th>  </th>
-	</tr>
+<body>
+	<div>
+	<table>
+		<tr>
+			<th> To-Do </th>
+			<th> Description </th>
+			<th> Date de fin </th>
+			<th> Temps restant</th>
+			<th>  </th>
+			<th>  </th>
+		</tr>
 
-<% @tasks.each do |t|%>
-	<tr>
-		<th> <%= t.task_title %> </th>
-		<th> <%= t.task_description %> </th>
-		<th> <%= t.deadline %> </th>
-		<th> <% if t.done == false %>
-				<%= 'Il reste x jours' %>
-			<% end %> </th>
-		<th> <%= link_to 'Modifier', edit_task_path(t) %> </th>
-		<th> <%= link_to 'Détruire', task_path(t), :confirm => 'Êtes-vous certain ?',
-		:method => :delete %> </th>
-	</tr>
-<% end %>
-</table>
+	<% @tasks.each do |t|%>
+		<tr>
+			<th> <%= t.task_title %> </th>
+			<th> <%= t.task_description %> </th>
+			<th> <%= t.deadline %> </th>
+			<th> <% if t.done == false %>
+							<%= 'Il reste x jours' %>
+					 <% end %> </th>
+			<th> <%= link_to 'Modifier', edit_task_path(t) %> </th>
+			<th> <%= link_to 'Détruire', task_path(t), :confirm => 'Êtes-vous certain ?',
+				:method => :delete %> </th>
+		</tr>
+	<% end %>
+	</table>
+
 <br>
 
 <%= link_to "Ajouter", new_task_path %>
+
+	</div>
+</body>
+<html>
