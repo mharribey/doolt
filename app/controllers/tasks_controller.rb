@@ -26,6 +26,6 @@ class TasksController < ApplicationController
 	end
 
 	def destroy
-		
+
 	end
 end
