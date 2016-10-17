@@ -1,5 +1,7 @@
-<h2><%= @task.task_title %></h2>
-<p><%= @task.task_description %></p>
-<h4><%= @task.deadline %></h4>
+<div class='show'>
+<p><h2>To do : <%= @task.task_title %></h2></p>
+<p><h3> What exactly : <%= @task.task_description %></h3></p>
+<h4>Until > <%= @task.deadline %></h4>
+</div>
 
-<%= link_to 'Accueil', tasks_path %>
+<p class="bouton"><%= link_to 'Accueil', tasks_path %></p>
