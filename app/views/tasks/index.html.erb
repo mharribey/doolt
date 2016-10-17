@@ -10,13 +10,13 @@
 		<h1> Doolt </h1>
 	</header>
 
-	<div>
+	<div class="table">
 	<table>
 		<tr>
 			<th> To-Do </th>
 			<th> Description </th>
 			<th> Date de fin </th>
-			<th> Temps restant</th>
+			<th> Temps restants </th>
 			<th>  </th>
 			<th>  </th>
 		</tr>
@@ -27,8 +27,10 @@
 			<th> <%= t.task_description %> </th>
 			<th> <%= t.deadline %> </th>
 			<th> <% if t.done == false %>
-							<%= 'Il reste x jours' %>
-					 <% end %> </th>
+				<% time = (((t.deadline.to_time - Time.now).to_i)/3600) %>
+				<p><%= time/24%>j <%= time % 24%>h</p>
+				<% end %> </th>
+			<th> <%= link_to 'Détails', task_path(t) %> </th>
 			<th> <%= link_to 'Modifier', edit_task_path(t) %> </th>
 			<th> <%= link_to 'Détruire', task_path(t), :confirm => 'Êtes-vous certain ?',
 				:method => :delete %> </th>
@@ -38,7 +40,7 @@
 
 <br>
 
-<%= link_to "Ajouter", new_task_path %>
+<p class= 'bouton'><%= link_to "Ajouter", new_task_path %></p>
 
 	</div>
 </body>

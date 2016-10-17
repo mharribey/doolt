@@ -5,11 +5,13 @@
 		<h4> Despcription </h4>
 		<%= f.text_area :task_description %>
 		<h4> Date d'échéance </h4>
-		<%= f.datetime_local_field :deadline %>
+		<%= f.date_field :deadline %>
 	</p>
 
 	<p>
-		<%= f.submit "Ajouter", :disable_with => 'Ajout en cours
-		...' %>
+		<%= f.submit "Add", :disable_with => 'Ajout en cours
+		...'%>
 	</p>
-	<% end%> 
+	<p>		<%= link_to "Retour", tasks_path %> 	 </p>
+
+	<% end%>

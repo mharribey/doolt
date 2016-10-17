@@ -10,5 +10,5 @@
 
 Task.create(task_title: 'Couper les arbres',
 			task_description: 'Il faut penser à couper les arbres pour maman',
-			deadline: '2016-12-23 12:00:00',
+			deadline: '2016-12-23',
 	)

@@ -6,7 +6,7 @@ class CreateTasks < ActiveRecord::Migration[5.0]
     	t.string :task_title
     	t.string :task_description
     	t.boolean :done, :default => false
-    	t.datetime :deadline
+    	t.date :deadline
       t.timestamps
     end
   end
