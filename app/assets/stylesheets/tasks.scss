@@ -28,16 +28,21 @@ header {
 }
 
 .bouton {
-  background-color: grey;
+  background-color: #34495e;
   width: 80px;
   height :20px;
   text-align: center;
   margin: auto;
   border-radius: 20px;
+  padding : 5px 3px;
 }
 
 table {
     max-width: 1100px;
+}
+
+#min-width {
+  min-width: 100px;
 }
 
 table,td,th {

@@ -32,17 +32,19 @@
 			</td>
 			<td> <%= t.task_title %> </td>
 			<td> <%= t.task_description %> </td>
-			<td> <%= t.deadline %> </td>
-			<td> <% if t.done == false %>
-				<% time = ((t.deadline.to_time - Time.now).to_i) %>
+			<td id = "min-width"> <%= t.deadline %> </td>
+			<% time = ((t.deadline.to_time - Time.now).to_i) %>
+			<td id = "min-width"> <% if time >= 0 %>
 				<p><%= (time/3600) / 24 %>j <%= (time/3600) % 24%>h <%= (time/60) % 60 %>m</p>
+				<%elsif	time < 0 %>
+				<p> Supposed to be done </p>
 				<%else%>
-				<p>DONE</p>
+				<p> DONE </p>
 				<% end %>
 			</td>
 			<td> <p class="bouton"><%= link_to 'Détails', task_path(t) %> </p> </td>
 			<td> <p class="bouton"><%= link_to 'Modifier', edit_task_path(t) %> </p> </td>
-			<td> <p class="bouton"><%= link_to 'Supprimer', task_path(t), :confirm =>'Etes vous certain ?', method: :delete  %> </p> </td>
+			<td> <p class="bouton"><%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </td>
 		</tr>
 	<% end %>
 	</table>
