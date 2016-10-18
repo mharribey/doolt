@@ -1,4 +1,5 @@
-<%= form_for :tasks, url: tasks_path do |f|%>
+<div class="show">
+	<%= form_for :task, url: tasks_path do |f|%>
 	<p>
 		<h3> Tâche </h3>
 		<%= f.text_field :task_title %>
@@ -9,9 +10,10 @@
 	</p>
 
 	<p>
-		<%= f.submit "Add", :disable_with => 'Ajout en cours
-		...'%>
+		<%= f.submit "Add", data: { disable_with: 'Ajout en cours
+		...'} %>
 	</p>
 	<p class="bouton">		<%= link_to "Retour", tasks_path %> 	 </p>
 
 	<% end%>
+</div>
