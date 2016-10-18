@@ -4,4 +4,8 @@
 <h4>Until > <%= @task.deadline %></h4>
 </div>
 
-<p class="bouton"><%= link_to 'Accueil', tasks_path %></p>
+<div class='column6'>
+      <div class="row-content"><p class="bouton"><%= link_to 'Accueil', tasks_path %> </p> </div>
+      <div class="row-content"><p class="bouton"><%= link_to 'Modifier', edit_task_path %> </p> </div>
+      <div class="row-content"><p class="bouton"><%= link_to 'Supprimer', task_path, method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </div>
+</div>
