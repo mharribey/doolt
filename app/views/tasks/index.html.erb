@@ -1,9 +1,4 @@
-  <!-- Affiche toutes les taches -->
-<!DOCTYPE hmtl>
-<html>
-	<head>
-		<%= favicon_link_tag 'notebook.ico'	%>
-	</head>
+
 
 <body>
 	<header>
@@ -24,7 +19,10 @@
 <% @tasks.each do |t|%>
 		<div class ='row align-left'>
 			<div class='column1'>
-					<div class="row-content"><%= check_box :p , :nom, :class=>"item-check", :data => { :path => t[:id] } %> </div>
+						<%= link_to task_path(t), {:method => :delete, data: {:confirm => 'Voulez vous supprimer la tâche ?'}} do %>
+						<div class="checkbox-container">
+						</div>
+						<% end %>
 			</div>
 			<div class='column2'>
 					<div class="row-content"><%= t.task_title %> </div>
@@ -35,9 +33,9 @@
 			<div class='column4'>
 					<div class="row-content" id = "min-width"> <%= t.deadline %> </div>
 			</div>
-					<% time = ((t.deadline.to_time - Time.now).to_i) %>
 			<div class='column5'>
 					<div class="row-content" id = "min-width">
+							<% time = ((t.deadline.to_time - Time.now).to_i) %>
 							<% if time >= 0 %>
 						<p><%= (time/3600) / 24 %>j <%= (time/3600) % 24%>h <%= (time/60) % 60 %>m</p>
 							<%elsif	time < 0 %>
@@ -51,7 +49,7 @@
 		<div class='column6'>
 					<div class="row-content"><p class="bouton"><%= link_to 'Détails', task_path(t) %> </p> </div>
 					<div class="row-content"><p class="bouton"><%= link_to 'Modifier', edit_task_path(t) %> </p> </div>
-					<div class="row-content"><p class="bouton"><%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </div>
+				<!--	<div class="row-content"><p class="bouton"><%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </div> -->
 		</div>
 <%end%>
 
@@ -60,6 +58,9 @@
 
 <p class= 'bouton'><%= link_to "Ajouter", new_task_path %></p>
 
-</body>
+	<!-- <footer>
+		<p style='color:#ecf0f1'> <span style:"color:#bdc3c7">Développement: </span> Mathieu Harribey </p>
+		<p style='color:#ecf0f1'> <span style:"color:#bdc3c7">GitHub: </span> doolt </p>
+	</footer> -->
 
-</html>
+</body>
