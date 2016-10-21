@@ -72,56 +72,6 @@
 		    </div>
 		    </div>
 
-
-
-
-		<div class='row align-left'>
-			<div class='column1'><h3> Done </h3></div>
-			<div class='column2'><h3> To-Do </h3></div>
-			<div class='column3'><h3> Description </h3></div>
-			<div class='column4'><h3> Date de fin </h3></div>
-			<div class='column5'><h3> Temps restants </h3></div>
-		</div>
-
-			<br>
-
-
-		<div class ='row align-left'>
-			<div class='column1'>
-						<%= link_to task_path(t), {:method => :delete, data: {:confirm => 'Voulez vous supprimer la tâche ?'}} do %>
-			<div class="checkbox-container">
-		</div>
-					<% end %>
-			</div>
-			<div class='column2'>
-					<div class="row-content"><%= t.task_title %> </div>
-			</div>
-			<div class='column3'>
-					<div class="row-content"><%= t.task_description %> </div>
-			</div>
-			<div class='column4'>
-					<div class="row-content" id = "min-width"> <%= t.deadline %> </div>
-			</div>
-			<div class='column5'>
-					<div class="row-content" id = "min-width">
-							<% time = ((t.deadline.to_time - Time.now).to_i) %>
-							<% if time >= 0 %>
-						<p><%= (time/3600) / 24 %>j <%= (time/3600) % 24%>h <%= (time/60) % 60 %>m</p>
-							<%elsif	time < 0 %>
-						<p> Supposed to be done </p>
-							<%else%>
-						<p> DONE </p>
-							<% end %>
-					</div>
-			</div>
-		</div>
-		<div class='column6'>
-					<div class="row-content"><p class="bouton"><%= link_to 'Détails', task_path(t) %> </p> </div>
-					<div class="row-content"><p class="bouton"><%= link_to 'Modifier', edit_task_path(t) %> </p> </div>
-					<div class="row-content"><p class="bouton"><%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </div>
-		</div>
-<%end%>
-
 <br>
 
 <h2>Ajouter une tâche<span class="label label-default"><%= link_to 'New', new_task_path %></span></h2>
