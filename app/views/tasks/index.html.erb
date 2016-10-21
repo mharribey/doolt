@@ -49,15 +49,13 @@
 		<div class='column6'>
 					<div class="row-content"><p class="bouton"><%= link_to 'Détails', task_path(t) %> </p> </div>
 					<div class="row-content"><p class="bouton"><%= link_to 'Modifier', edit_task_path(t) %> </p> </div>
-				<!--	<div class="row-content"><p class="bouton"><%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </div> -->
+					<div class="row-content"><p class="bouton"><%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </div>
 		</div>
 <%end%>
 
+<br>
 
-<br><br>
-
-<p class= 'bouton'><%= link_to "Ajouter", new_task_path %></p>
-<h3>Example heading<span class="label label-default"><%= link_to 'New', new_task_path %></span></h3>
+<h2>Ajouter une tâche<span class="label label-default"><%= link_to 'New', new_task_path %></span></h2>
 
 	<!-- <footer>
 		<p style='color:#ecf0f1'> <span style:"color:#bdc3c7">Développement: </span> Mathieu Harribey </p>
