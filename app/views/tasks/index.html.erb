@@ -1,9 +1,57 @@
 
 
 <body>
-	<header>
-		<h1> Doolt </h1>
-	</header>
+	<div class="container">
+	      <div class="header clearfix">
+	        <nav>
+	          <ul class="nav nav-pills pull-right">
+	            <li role="presentation" class="active"><a href="#">Home</a></li>
+	            <li role="presentation"><a href="#">About</a></li>
+	            <li role="presentation"><a href="#">Contact</a></li>
+	          </ul>
+	        </nav>
+	        <h3 class="text-muted">Doolt</h3>
+	      </div>
+
+	      <div class="jumbotron">
+	        <h1>Découvrez Doolt</h1>
+	        <p class="lead">Doolt est une nouvelle interface vous permettant de gérer vos tâches et missions via une to-do list épurée, simple, et efficace.</p>
+	        <p><a class="btn btn-lg btn-success" href="#" role="button"><%= link_to 'Créer une nouvelle tâche !', new_task_path %></a></p>
+	      </div>
+
+	      <div class="row marketing">
+	        <div class="col-lg-6">
+	          <h4>Subheading</h4>
+	          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+	          <h4>Subheading</h4>
+	          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+	          <h4>Subheading</h4>
+	          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+	        </div>
+
+	        <div class="col-lg-6">
+	          <h4>Subheading</h4>
+	          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+	          <h4>Subheading</h4>
+	          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+	          <h4>Subheading</h4>
+	          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+	        </div>
+	      </div>
+
+	      <footer class="footer">
+	        <p>&copy; 2016 Company, Inc.</p>
+	      </footer>
+
+	    </div> <!-- /container -->
+
+
+	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
 		<div class='row align-left'>
@@ -20,9 +68,9 @@
 		<div class ='row align-left'>
 			<div class='column1'>
 						<%= link_to task_path(t), {:method => :delete, data: {:confirm => 'Voulez vous supprimer la tâche ?'}} do %>
-						<div class="checkbox-container">
-						</div>
-						<% end %>
+			<div class="checkbox-container">
+		</div>
+					<% end %>
 			</div>
 			<div class='column2'>
 					<div class="row-content"><%= t.task_title %> </div>
