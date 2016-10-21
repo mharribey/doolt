@@ -30,28 +30,49 @@
 	          <h4>Subheading</h4>
 	          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 	        </div>
-
-	        <div class="col-lg-6">
-	          <h4>Subheading</h4>
-	          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-	          <h4>Subheading</h4>
-	          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-	          <h4>Subheading</h4>
-	          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-	        </div>
 	      </div>
-
-	      <footer class="footer">
-	        <p>&copy; 2016 Company, Inc.</p>
-	      </footer>
-
-	    </div> <!-- /container -->
-
-
-	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+			<div class="row">
+			<div class="col-md-6">
+			    <table class="table table-striped">
+		        <thead>
+							<tr>
+			          <th>Done</th>
+			          <th>To-do</th>
+			          <th>Description</th>
+		            <th>End</th>
+								<th>Time left</th>
+              </tr>
+		        </thead>
+					<% @tasks.each do |t|%>
+            <tbody>
+		          <tr>
+			          <td><%= link_to task_path(t), {:method => :delete, data: {:confirm => 'Voulez vous supprimer la tâche ?'}} %></td>
+			          <td><%= t.task_title %></td>
+		            <td><%= t.task_description %></td>
+		            <td><%= t.deadline %></td>
+								<td><% time = ((t.deadline.to_time - Time.now).to_i) %>
+										<% if time >= 0 %>
+											<p><%= (time/3600) / 24 %>j <%= (time/3600) % 24%>h <%= (time/60) % 60 %>m</p>
+										<%elsif	time < 0 %>
+											<p> Supposed to be done </p>
+										<%else%>
+											<p> DONE </p>
+										<% end %>
+							 </td>
+							 <td>
+								 		<%= link_to 'Détails', task_path(t) %>
+							 			<%= link_to 'Modifier', edit_task_path(t) %>
+							 			<%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %>
+								</td>
+		          </tr>
+			      </tbody>
+			    </table>
+		    </div>
+		    </div>
+
+
 
 
 		<div class='row align-left'>
@@ -64,7 +85,7 @@
 
 			<br>
 
-<% @tasks.each do |t|%>
+
 		<div class ='row align-left'>
 			<div class='column1'>
 						<%= link_to task_path(t), {:method => :delete, data: {:confirm => 'Voulez vous supprimer la tâche ?'}} do %>
@@ -105,6 +126,9 @@
 
 <h2>Ajouter une tâche<span class="label label-default"><%= link_to 'New', new_task_path %></span></h2>
 
+<footer class="footer">
+	<p>&copy; 2016 Company, Inc.</p>
+</footer>
 	<!-- <footer>
 		<p style='color:#ecf0f1'> <span style:"color:#bdc3c7">Développement: </span> Mathieu Harribey </p>
 		<p style='color:#ecf0f1'> <span style:"color:#bdc3c7">GitHub: </span> doolt </p>
