@@ -7,8 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #crée les tâches
-
-Task.create(task_title: 'Couper les arbres',
-			task_description: 'Il faut penser à couper les arbres pour maman',
-			deadline: '2016-12-23',
-	)
