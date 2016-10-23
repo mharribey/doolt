@@ -15,6 +15,108 @@
 
  */
 
- h1 {
-   font-size: 5em;
- }
+/* LIENS */
+
+h1 {
+  color:#925446;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
+a {
+  color: #bdc3c7;
+}
+
+a:hover {
+  color: #ecf0f1;
+}
+
+a:visited {
+  color: #bdc3c7;
+}
+
+
+/* HEADER */
+
+#hr1{
+  width:400px;
+  color: #925446;
+}
+
+#hr2 {
+  margin-top: 15px;
+  width:300px;
+}
+
+.container {
+  text-align: center;
+  height: 100%;
+  vertical-align: middle;
+  padding:20px;
+
+}
+
+.header{
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  font-size: 1.4em;
+  font-family: 'Coda', cursive;
+}
+
+.lead {
+  font-family: 'Oleo Script', cursive;
+  font-size: 1em;
+  color:#95a5a6;
+}
+
+.bouton {
+  font-family: 'Coda', cursive;
+  background-color:#925446;
+  width:150px;
+  margin:auto;
+  border-radius: 20px;
+  padding:5px;
+  margin-top:40px;
+  text-align: center;
+}
+
+
+/* TABLEAU */
+
+body {
+  background-color: #323232;
+}
+
+table{
+  font-family: 'Roboto', sans-serif;
+  margin:auto;
+  border-collapse: collapse;
+}
+
+th {
+  margin:15px;
+  padding: 15px;
+}
+
+td,th {
+  padding:5px 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* AUTRES */
+
+footer {
+  background-color: #101010;
+  height:100%;
+  width: 100%;
+  padding:15px;
+  margin-top: 60px;
+  font-size: 1.1em;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Oleo Script', cursive;
+}

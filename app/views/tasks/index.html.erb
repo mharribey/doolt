@@ -1,44 +1,31 @@
 
-
 <body>
 	<div class="container">
-	      <div class="header clearfix">
-	        <nav>
-	          <ul class="nav nav-pills pull-right">
-	            <li role="presentation" class="active"><a href="#">Home</a></li>
-	            <li role="presentation"><a href="#">About</a></li>
-	            <li role="presentation"><a href="#">Contact</a></li>
-	          </ul>
-	        </nav>
-	        <h3 class="text-muted">Doolt</h3>
-	      </div>
 
-	      <div class="doolt">
+	      <div class="header">
 	        <h1>Découvrez Doolt</h1>
-	        <p class="lead">Doolt est une nouvelle interface vous permettant de gérer vos tâches et missions via une to-do list épurée, simple, et efficace.</p>
-	      </div>
+	        <p class="lead">Doolt est une nouvelle interface vous permettant de gérer vos tâches via une to-do list épurée, simple, et efficace.</p>
+				</div>
+				<hr/ id='hr1'>
 	</div>
 
-
 			<div class="row">
-			<div class="col">
-			    <table class="table table-striped">
+			    <table>
 		        <thead>
 							<tr>
-			          <th>Done</th>
 			          <th>To-do</th>
 			          <th>Description</th>
-		            <th>End</th>
-								<th>Time left</th>
+								<th>Times left</th>
+								<th></th>
               </tr>
+
 		        </thead>
-					<% @tasks.each do |t|%>
+
             <tbody>
+							<% @tasks.each do |t|%>
 		          <tr>
-			          <td><%= link_to task_path(t), {:method => :delete, data: {:confirm => 'Voulez vous supprimer la tâche ?'}} %></td>
 			          <td><%= t.task_title %></td>
-		            <td><%= t.task_description %></td>
-		            <td><%= t.deadline %></td>
+		            <td style="width:350px"><%= t.task_description %></td>
 								<td><% time = ((t.deadline.to_time - Time.now).to_i) %>
 										<% if time >= 0 %>
 											<p><%= (time/3600) / 24 %>j <%= (time/3600) % 24%>h <%= (time/60) % 60 %>m</p>
@@ -47,29 +34,31 @@
 										<%else%>
 											<p> DONE </p>
 										<% end %>
-							 </td>
-							 <td>
+							 	</td>
+							 	<td>
 								 		<%= link_to 'Détails', task_path(t) %>
-							 			<%= link_to 'Modifier', edit_task_path(t) %>
-							 			<%= link_to 'Supprimer', task_path(t), method: :delete, data: { confirm: "Etes vous certain ?"} %>
-								</td>
-		          </tr>
+							 	</td>
+							</tr>
+					<%end%>
+							<tr></tr>
+							<tr>
+							 	<th colspan='4' style='color:#925446;font-size:1em'>Add..</th>
+					 		</tr>
+
 			      </tbody>
-						<%end%>
 			    </table>
 		    </div>
-		    </div>
+
+			<hr/ id='hr2'>
+				<div class="bouton">
+					<%= link_to 'Ajoutez une tâche', new_task_path %>
+				</div>
 
 <br>
 
-<h2>Ajouter une tâche<span class="label label-default"><%= link_to 'New', new_task_path %></span></h2>
-
-<footer class="footer">
-	<p>&copy; 2016 Company, Inc.</p>
-</footer>
-	<!-- <footer>
-		<p style='color:#ecf0f1'> <span style:"color:#bdc3c7">Développement: </span> Mathieu Harribey </p>
-		<p style='color:#ecf0f1'> <span style:"color:#bdc3c7">GitHub: </span> doolt </p>
-	</footer> -->
+	<footer class="footer">
+		<p style='color:#95a5a6'>Développement :<span style="color:#ecf0f1"> Mathieu Harribey</span> | Github :<span style="color:#ecf0f1"> doolt </span></p>
+		<p>&copy; 2016 Company, Inc.</p>
+	</footer>
 
 </body>
