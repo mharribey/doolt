@@ -1,11 +1,12 @@
-<div class='show'>
-<p><h2>To do : <%= @task.task_title %></h2></p>
-<p><h3> What exactly : <%= @task.task_description %></h3></p>
-<h4>Until > <%= @task.deadline %></h4>
-</div>
+<div class='details'>
+    <p><h2>To do : <%= @task.task_title %></h2></p>
+    <p><h3> What exactly : <%= @task.task_description %></h3></p>
+    <h4>Until > <%= @task.deadline %></h4>
 
-<div class='column6'>
-      <div class="row-content"><p class="bouton"><%= link_to 'Accueil', tasks_path %> </p> </div>
-      <div class="row-content"><p class="bouton"><%= link_to 'Modifier', edit_task_path %> </p> </div>
-      <div class="row-content"><p class="bouton"><%= link_to 'Supprimer', task_path, method: :delete, data: { confirm: "Etes vous certain ?"} %> </p> </div>
+    <div class='show'>
+          <p class="bouton"><%= link_to 'Accueil', tasks_path %> </p>
+          <p class="bouton"><%= link_to 'Modifier', edit_task_path %> </p>
+          <p class="bouton"><%= link_to 'Supprimer', task_path, method: :delete, data: { confirm: "Etes vous certain ?"} %> </p>
+    </div>
+
 </div>
