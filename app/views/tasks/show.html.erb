@@ -1,7 +1,8 @@
 <div class='details'>
-    <p><h2>To do : <%= @task.task_title %></h2></p>
-    <p><h3> What exactly : <%= @task.task_description %></h3></p>
-    <h4>Until > <%= @task.deadline %></h4>
+    <h2><span style="color:#925446;text-align:center">To do : </span><%= @task.task_title %></h2>
+                                                <hr/>
+    <h3><span style="color:#925446">> What exactly : </span><%= @task.task_description %></h3>
+    <h4><span style="color:#925446">Date d'échéance : </span><%= @task.deadline %></h4>
 
     <div class='show'>
           <p class="bouton"><%= link_to 'Accueil', tasks_path %> </p>
