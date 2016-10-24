@@ -1,6 +1,9 @@
 # gère les taches
 
 class TasksController < ApplicationController
+
+		http_basic_authenticate_with name: "admin", password: "123", except: [:index, :show]
+
 	def index
 		@tasks = Task.all
 	end
