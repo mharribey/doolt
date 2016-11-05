@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Doolt</title>
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag 'notebook.ico'	%>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
-  </head>
+    <head>
+        <title>Doolt</title>
+        <%= csrf_meta_tags %>
+        <%= favicon_link_tag 'notebook.ico'	%>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
+    </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+    <body>
+        <p class='alert' style='display:block'><%= alert %></p>
+        <p class='notice' style='display:block'><%= notice %></p>
+        <%= yield %>
+    </body>
 
 </html>

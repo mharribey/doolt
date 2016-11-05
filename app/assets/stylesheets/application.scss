@@ -21,6 +21,12 @@ h1 {
   color:#925446;
 }
 
+.title {
+  font-family: 'Roboto', sans-serif;
+  color:#925446;
+  font-size: 30px;
+}
+
 a, a:hover, a:visited {
   text-decoration: none;
 }
@@ -75,14 +81,31 @@ a:visited {
 .bouton_accueil {
   font-family: 'Coda', cursive;
   background-color:#925446;
-  width:150px;
-  margin:auto;
+  width:180px;
+  margin: auto;
   margin-top: 40px;
   border-radius: 20px;
   padding:5px;
   text-align: center;
+  vertical-align: middle;
 }
 
+.bouton_auth {
+  font-family: 'Coda', cursive;
+  background-color:#925446;
+  width:180px;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding:3px;
+  text-align: center;
+  vertical-align: middle;
+  display:inline-block;
+}
+
+.user {
+  display:inline-block;
+  margin-top: 25px;
+}
 
 /* TABLEAU */
 
@@ -127,24 +150,29 @@ thead {
 }
 /* AUTRES */
 
-.field1, .field2{
+.field1, .field2, .field3{
   background-color: #925446;
   border-radius: 10px;
   border:2px solid #ecf0f1;
   color:#ecf0f1;
   font-size:0.8em;
+  text-align: center;
 }
 
 .field1 {
   width:120px;
   height:20px;
-  text-align: center;
 }
 
 .field2 {
   width:350px;
   height:70px;
   padding:10px;
+}
+
+.field3 {
+  margin:10px 0px;
+  width:200px;
 }
 
 .bouton {
@@ -158,15 +186,15 @@ thead {
   margin: 0px 30px;
 }
 
- .notice {
+ .notice, .alert {
+  display: inline-block;
   font-family: 'Coda', cursive;
-  background-color:#925446;
   margin: auto;
   text-align: center;
-  padding:5px;
-  border-radius: 20px;
+  padding:10px;
   color:white;
-} 
+  width:500px;
+}
 
 .show {
   vertical-align: middle;
