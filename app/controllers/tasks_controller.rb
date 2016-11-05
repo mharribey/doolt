@@ -2,7 +2,6 @@
 
 class TasksController < ApplicationController
 
-		http_basic_authenticate_with name: "admin", password: "123", except: [:index, :show]
 
 	def index
 		@tasks = Task.all
@@ -48,5 +47,9 @@ class TasksController < ApplicationController
       params.require(:task).permit(:task_title, :task_description, :done, :deadline)
   end
 
+	private
+		def authenticate_owner!
+
+		end
 
 end
