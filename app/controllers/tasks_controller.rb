@@ -2,7 +2,6 @@
 
 class TasksController < ApplicationController
 
-
 	def index
 		@tasks = Task.all
 	end
@@ -12,17 +11,17 @@ class TasksController < ApplicationController
 	end
 
 	def new
-
 	end
 
 	def create
 		@task = Task.new(task_params)
-        if @task.save
-          redirect_to @task
-        else
-          render 'new'
-        end
-			end
+		@task.user = current_user
+    if @task.save
+			redirect_to @task
+    else
+      render 'new'
+  	end
+	end
 
 	def update
 			@task = Task.find(params[:id])
@@ -48,8 +47,19 @@ class TasksController < ApplicationController
   end
 
 	private
-		def authenticate_owner!
-
+		def authenticate_owner
+			if current_user.id == Task.find(params[:id]).user.id # or something similar
+				return true
+			end
+			if request.referrer
+				redirect_to request.referrer,
+					:notice => "You must have permission to access this form."
+			else
+				redirect_to root_path,
+					:notice => "You must have permission to access this form."
+			end
+			return false
 		end
+
 
 end
