@@ -2,11 +2,11 @@
 	<%= form_for :task, url: task_path(@task), method: :patch do |f|%>
 	<p>
 		<h3> Tâche </h3>
-		<%= f.text_field :task_title, class: 'field1'%>
+		<%= f.text_field :task_title, class: 'field1', required: true %>
 		<h4> Despcription </h4>
-		<%= f.text_area :task_description, class: 'field2' %>
+		<%= f.text_area :task_description, class: 'field2', required: true %>
 		<h4> Date d'échéance </h4>
-		<%= f.date_field :deadline, class: 'field1' %>
+		<%= f.date_field :deadline, class: 'field1', required: true %>
 	</p>
 
 	<p>
