@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Recordd
-# gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
 gem 'rails_12factor'
 gem 'devise'
 # Use Puma as the app server
