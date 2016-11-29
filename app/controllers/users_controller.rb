@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
-		@task = Task.find(params[:id])
+    if user_signed_in?
+		    @tasks = Task.where(user: current_user)
+    else
+      redirect_to new_user_session_path
+    end
 	end
 
 end
