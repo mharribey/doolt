@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 
 	def index
 		@tasks = Task.all
+		redirect_to root_path
 	end
 
 	def show

@@ -1,17 +1,20 @@
 <div class="details" style='text-align:center;width:370px;'>
 	<%= form_for :task, url: tasks_path do |f|%>
-	<p>
-		<h3> Tâche </h3>
-		<%= f.text_area :task_title, class: 'field1', required: true %>
-		<h4> Date d'échéance </h4>
-		<%= f.date_field :deadline, class: 'field1', required: true %>
-	</p>
 
-	<p>
-		<%= f.submit "Add", data: { disable_with: 'Ajout en cours
-		...'}, style: 'font-size:16px;vertical-align:middle;margin-top:20px;' %>
-	</p>
-	<p class="bouton_accueil"><%= link_to "Retour", root_path %></p>
+		<h3> Vous avez quelque chose de prévu ? </h3>
+		<div class="field">
+
+			<%= f.text_field :task_title, class: 'field1', required: true, placeholder: 'Intitulé' %>
+			<h5> Deadline </h5>
+			<%= f.date_field :deadline, class: 'field1', required: true %>
+			
+			<%= f.submit "Add", data: { disable_with: 'Ajout en cours
+			...'}, style: 'font-size:16px;vertical-align:middle;margin-top:20px;', class: 'button' %>
+		</div>
+
+		<hr style='margin-bottom:5vh;width:40%;'/>
+
+	<%= link_to "Retour", root_path %>
 
 	<% end%>
 </div>
