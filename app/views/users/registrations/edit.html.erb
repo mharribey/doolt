@@ -5,40 +5,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: 'field3' %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password, 'Mot de passe' %> <i>(Facultatif)</i><br />
-    <%= f.password_field :password, autocomplete: "off", class: 'field3' %>
-    <% if @minimum_password_length %>
-      <br />
+    <%= f.email_field :email, autofocus: true, class: 'field3', placeholder: 'Email' %>
+    <%= f.password_field :current_password, autocomplete: "off", class: 'field3', placeholder: 'Mot de Passe actuel' %>
+    <br/>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, 'Confirmation' %><i>(Facultatif)</i><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'field3' %>
-  </div>
+    <%= f.password_field :password, autocomplete: "off", class: 'field3', placeholder: 'Nouveau mot de passe' %>
 
-  <div class="field">
-    <%= f.label :current_password, 'Mot de passe actuel' %><br />
-    <%= f.password_field :current_password, autocomplete: "off", class: 'field3' %>
-  </div>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'field3', placeholder: 'Confirmation' %>
+
+</div>
 
   <div class="actions">
-    <%= f.submit "Mettre à jour", style: 'font-size:16px;vertical-align:middle;margin-top:20px;' %>
-  </div><br/>
+    <%= f.submit "Mettre à jour", style: 'font-size:16px;vertical-align:middle;margin-top:20px;', class: 'button' %>
+  </div>
+  <br/>
 <% end %>
 
 <hr />
 
-<h3>Pas satisfait ? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sur?" }, method: :delete %></h3>
+<h3>Pas satisfait ? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sur?" }, method: :delete, style: 'font-size:16px;vertical-align:middle;margin-top:20px;', class: 'button' %> </h3>
 
 <%= link_to "Retour", :back %>
 
