@@ -15,6 +15,11 @@
 
  */
 
+ html{
+   top:0;
+   margin:0;
+ }
+
 /* LIENS */
 
 h1 {
@@ -110,7 +115,7 @@ a:visited {
 /* TABLEAU */
 
 body {
-  background-color: #323232;
+  background-color: #F3F3F3;
 }
 
 table{
@@ -144,7 +149,6 @@ thead {
 .row {
   width:900px;
   height:100%;
-  background-color: #95a5a6;
   margin: auto;
   border-radius: 15px;
 }
@@ -221,13 +225,17 @@ thead {
   }
 
 footer {
-  background-color: #101010;
   height:100%;
   padding:15px;
   top:0;
+  margin:auto;
   margin-top: 60px;
   font-size: 1.1em;
   text-align: center;
   vertical-align: middle;
   font-family: 'Oleo Script', cursive;
+}
+
+footer p {
+  color:#4A4A4A;
 }
