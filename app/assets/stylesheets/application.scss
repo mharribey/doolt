@@ -23,12 +23,12 @@
 /* LIENS */
 
 h1 {
-  color:#925446;
+  color:#4A4A4A;
 }
 
-.title {
+.title { //H2 s'enregistrer se connecter
   font-family: 'Roboto', sans-serif;
-  color:#925446;
+  color:#1794AC;
   font-size: 30px;
 }
 
@@ -36,30 +36,17 @@ a, a:hover, a:visited {
   text-decoration: none;
 }
 
-a {
-  color: #bdc3c7;
+a,a:visited, {
+  color: #1795AC;
 }
 
-a:hover {
-  color: #ecf0f1;
+a:hover, a:focus {
+  filter:opacity(70%);
 }
 
-a:visited {
-  color: #ecf0f1;
-}
 
 
 /* HEADER */
-
-#hr1{
-  width:400px;
-  color: #925446;
-}
-
-#hr2 {
-  margin-top: 30px;
-  width:300px;
-}
 
 .container {
   text-align: center;
@@ -70,12 +57,41 @@ a:visited {
 }
 
 .header{
-  height: 100%;
-  width: 50%;
+  height: auto;
+  width: 100%;
   margin: auto;
   font-size: 1.4em;
   font-family: 'Roboto', sans-serif;
 }
+
+.item-navbar {
+  display:inline-block;
+  vertical-align: middle;
+  margin:2vh;
+  font-size: 0.8em;
+}
+  #main-title {
+    font-size: 1.7em;
+    border-right: 1px solid #4A4A4A;
+    margin:4vh 0vh;
+    padding-right: 4vh;
+  }
+
+  #add-task {
+
+  }
+  #edit-profil{
+    a{
+      color:#4A4A4A;
+      &:hover {
+        filter:opacity(70%);
+      }
+    }
+    margin-left:80vh;
+  }
+  #quit {
+
+  }
 
 .lead {
   font-family: 'Oleo Script', cursive;
@@ -83,25 +99,23 @@ a:visited {
   color:#95a5a6;
 }
 
-.bouton_accueil {
+.bouton_accueil, .bouton_auth {
   font-family: 'Coda', cursive;
-  background-color:#925446;
+  border: 1px solid #1794AC;
   width:180px;
   margin: auto;
-  margin-top: 40px;
-  border-radius: 20px;
-  padding:5px;
+  margin-top: 35px;
+  padding:1vh;
   text-align: center;
   vertical-align: middle;
 }
 
 .bouton_auth {
   font-family: 'Coda', cursive;
-  background-color:#925446;
+  border: 1px solid #1794AC;
   width:180px;
   margin-top: 30px;
-  border-radius: 20px;
-  padding:3px;
+  padding:1vh;
   text-align: center;
   vertical-align: middle;
   display:inline-block;
@@ -110,6 +124,7 @@ a:visited {
 .user {
   display:inline-block;
   margin-top: 25px;
+  color:#1794AC;
 }
 
 /* TABLEAU */
@@ -127,13 +142,12 @@ table{
 th {
   margin: 15px;
   padding: 15px;
-
 }
 
 td {
   padding:10px;
   margin: 15px;
-  border-bottom: 1px solid #101010;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 td,th {
@@ -142,8 +156,8 @@ td,th {
 }
 
 thead {
-  border-bottom: 1px solid #101010;
-  color:#925446;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color:#1794AC;
 }
 
 .row {
@@ -155,10 +169,7 @@ thead {
 /* AUTRES */
 
 .field1, .field2, .field3{
-  background-color: #925446;
-  border-radius: 10px;
-  border:2px solid #ecf0f1;
-  color:#ecf0f1;
+  border: 1px solid #1794AC;
   font-size:0.8em;
   text-align: center;
 }
@@ -181,9 +192,8 @@ thead {
 
 .bouton {
   font-family: 'Coda', cursive;
-  background-color:#925446;
+  border: 1px solid #1794AC;
   width:150px;
-  border-radius: 20px;
   padding:5px;
   text-align: center;
   display:inline-block;

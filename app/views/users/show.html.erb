@@ -1,11 +1,19 @@
 
 <div class="container">
-
 			<div class="header">
-				<h1 style ='font-size:3em'>Doolt</h1>
-				<p class="lead">Découvrez doolt : une nouvelle interface vous permettant de gérer vos tâches via une to-do list épurée, simple, et efficace.</p>
+
+				 <h1 class='item-navbar' id='main-title'>Doolt</h1>
+				<div class="item-navbar" id='add-task'>
+					<%= link_to 'Ajoutez une tâche', new_task_path %>
+				</div>
+				<div class="item-navbar" id='edit-profil'>
+					<%= link_to 'Profil', edit_user_registration_url%>
+				</div>
+				<div class="item-navbar" id='quit'>
+					<%= link_to image_tag('images/quit.png'), destroy_user_session_path, method: :delete%>
+				</div>
+
 			</div>
-			<hr/ id='hr1'>
 </div>
 
 				<div class='row'>
@@ -13,7 +21,7 @@
 		        <thead>
 							<tr>
 			          <th>To-do</th>
-			          <th>Description</th>
+			          <!-- <th>Description</th> -->
 								<th>Times left</th>
 								<th></th>
               </tr>
@@ -22,8 +30,8 @@
             <tbody>
 								<% @tasks.each do |t|%>
 		          <tr>
-			          <td><%= t.task_title %></td>
-		            <td style="width:400px"><%= t.task_description %></td>
+			          <td style="width:400px"><%= t.task_title %></td>
+		            <!-- <td style="width:400px"><%= t.task_description %></td> -->
 								<td><% time = ((t.deadline.to_time - Time.now).to_i) %>
 										<% if time >= 0 %>
 											<p><%= (time/3600) / 24 %>j <%= (time/3600) % 24%>h <%= (time/60) % 60 %>m</p>
@@ -34,41 +42,22 @@
 										<% end %>
 							 	</td>
 							 	<td>
-								 		<%= link_to 'Détails', task_path(t) %>
+								 		<%= link_to image_tag('images/edit.png'), edit_task_path(t) %>
 							 	</td>
+								<td>
+										<%= link_to image_tag('images/delete.png'), task_path(t), method: :delete%>
+								</th>
 							</tr>
 					<%end%>
 							<tr></tr>
-							<tr>
-							 	<th colspan='4' style='color:#925446;font-size:1em'>Add..</th>
-					 		</tr>
 
 			      </tbody>
 			    </table>
 				</div>
 
 
-			<hr/ id='hr2'>
-
-			<div style="text-align:center;">
-				<div class="bouton_accueil">
-					<%= link_to 'Ajoutez une tâche', new_task_path %>
-				</div>
-
-					<div class="user">
-						<div class="bouton_accueil" style='display:inline-block'>
-							<%= link_to 'Modifier mon compte', edit_user_registration_url%>
-						</div>
-
-						<div class="bouton_accueil" style="display:inline-block">
-							<%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete%>
-						</div>
-					</div>
-		  </div>
-
+			<footer>
+				<p> Développement :<span style="color:#1794AC"> Mathieu Harribey</span> | Github :<span style="color:#1794AC"> doolt </span></p>
+				<p> &copy; 2016 Company, Inc. </p>
+			</footer>
 <br>
-
-	<footer class="footer">
-		<p style='color:#95a5a6'>Développement :<span style="color:#ecf0f1"> Mathieu Harribey</span> | Github :<span style="color:#ecf0f1"> doolt </span></p>
-		<p style='color:#95a5a6'>&copy; 2016 Company, Inc.</p>
-	</footer>

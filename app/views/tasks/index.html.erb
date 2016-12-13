@@ -1,4 +1,9 @@
+<div style="text-align:center;margin:auto;padding:10%">
+		<p> Cette page ne contient rien, veuillez vous rediriger vers la page d'accueil <p>
+		<%= link_to "ACCUEIL", root_path, style: 'color:#925446;'%>
+</div>
 
+<!--
 <div class="container">
 
 			<div class="header">
@@ -12,7 +17,7 @@
 		        <thead>
 							<tr>
 			          <th>To-do</th>
-			          <!-- <th>Description</th> -->
+			          <th>Description</th>
 								<th>Times left</th>
 								<th></th>
               </tr>
@@ -22,7 +27,7 @@
 								<% @tasks.each do |t|%>
 		          <tr>
 			          <td style="width:400px"><%= t.task_title %></td>
-		            <!-- <td style="width:400px"><%= t.task_description %></td> -->
+		            <td style="width:400px"><%= t.task_description %></td>
 								<td><% time = ((t.deadline.to_time - Time.now).to_i) %>
 										<% if time >= 0 %>
 											<p><%= (time/3600) / 24 %>j <%= (time/3600) % 24%>h <%= (time/60) % 60 %>m</p>
@@ -69,4 +74,4 @@
 				<p> Développement :<span style="color:#925446"> Mathieu Harribey</span> | Github :<span style="color:#925446"> doolt </span></p>
 				<p> &copy; 2016 Company, Inc. </p>
 			</footer>
-<br>
+<br> -->
