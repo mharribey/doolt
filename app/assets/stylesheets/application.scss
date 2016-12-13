@@ -22,14 +22,19 @@
 
 /* LIENS */
 
+.barre {
+  width:50%;
+}
+
 h1 {
-  color:#4A4A4A;
+  color:#1794AC;
 }
 
 .title { //H2 s'enregistrer se connecter
   font-family: 'Roboto', sans-serif;
   color:#1794AC;
-  font-size: 30px;
+  font-size: 22px;
+  margin:0;
 }
 
 a, a:hover, a:visited {
@@ -75,6 +80,7 @@ a:hover, a:focus {
     border-right: 1px solid #4A4A4A;
     margin:4vh 0vh;
     padding-right: 4vh;
+    color:#4A4A4A;
   }
 
   #add-task {
@@ -96,10 +102,10 @@ a:hover, a:focus {
 .lead {
   font-family: 'Oleo Script', cursive;
   font-size: 1em;
-  color:#95a5a6;
+  color:#4A4A4A;
 }
 
-.bouton_accueil, .bouton_auth {
+.bouton_accueil {
   font-family: 'Coda', cursive;
   border: 1px solid #1794AC;
   width:180px;
@@ -111,14 +117,26 @@ a:hover, a:focus {
 }
 
 .bouton_auth {
-  font-family: 'Coda', cursive;
-  border: 1px solid #1794AC;
-  width:180px;
   margin-top: 30px;
+  display:inline-block;
+  background-color: #1794AC;
+  border-radius:5px;
+  color:white;
   padding:1vh;
+  font-family: 'Coda', cursive;
+  width:70%;
   text-align: center;
   vertical-align: middle;
-  display:inline-block;
+  a {
+    color:white;
+  }
+}
+
+.bouton_forgot {
+  margin-top:2vh;
+  a {
+    color:#4A4A4A;
+  }
 }
 
 .user {
@@ -166,13 +184,75 @@ thead {
   margin: auto;
   border-radius: 15px;
 }
-/* AUTRES */
+/* FORM */
 
-.field1, .field2, .field3{
-  border: 1px solid #1794AC;
-  font-size:0.8em;
-  text-align: center;
+.field {
+  width:40vh;
+  height:auto;
+  padding:4vh;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom:10px;
 }
+
+#button {
+    width: 25vh;
+    height:auto;
+    vertical-align: middle;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color:#4A4A4A;
+    font-size:2em;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+#button:hover {
+  color:#1794AC;
+}
+
+.field{
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 350px;
+    padding: 0px;
+    margin: 15px auto;
+}
+
+.field .field1,
+.field .field2,
+.field .field3,
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 1.5vh;
+    color:#4A4A4A;
+    border: 1px solid rgba(#4A4A4A,0.2);
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px 'Montserrat',Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease-in-out;
+    font-size:0.8em;
+    text-align: center;
+    height:auto;
+
+}
+
+.field .field1:focus,
+.field .field2:focus,
+.field .field3:focus,
+ {
+    border:transparent;
+    border-bottom:1px solid #1794AC;
+}
+
+
+/* AUTRES */
 
 .field1 {
   width:120px;
@@ -227,10 +307,8 @@ thead {
 .home {
   width:700px;
   height: 110%;
-  background-color: #95a5a6;
   margin:auto;
-  padding:10px 50px;
-  border-radius: 15px;
+  padding:3vh 10vh;
   font-family: 'Roboto', sans-serif;
   }
 

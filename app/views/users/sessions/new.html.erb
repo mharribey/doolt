@@ -6,31 +6,18 @@
       </div>
 </div>
 
+<hr class='barre'/>
+
 <div class='home' style='text-align:center;width:400px;'>
 
-<h2 class='title'>Se connecter</h2>
+<h2 class='title'> Qu'est-ce qu'il te reste à faire ?</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: 'field3', :required => true%>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, 'Mot de passe' %><br />
-    <%= f.password_field :password, autocomplete: "off", class: 'field3', :required => true %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Se connecter", style: 'font-size:16px;vertical-align:middle;margin-top:20px;' %>
-  </div>
+<div class='field'>
+    <%= f.email_field :email, autofocus:'off', class: 'field3', :required => true, placeholder: "Email"%>
+    <%= f.password_field :password, autocomplete: "off", class: 'field3', :required => true, placeholder: "Mot de Passe" %>
+    <%= f.submit "Se connecter", style: 'font-size:16px;vertical-align:middle;margin-top:20px;', id: 'button' %>
+</div>
 <% end %>
 
 <%= render "users/shared/links" %>
