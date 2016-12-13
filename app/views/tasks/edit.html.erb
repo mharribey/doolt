@@ -1,19 +1,19 @@
 <div class="details" style='text-align:center;width:370px;'>
 	<%= form_for :task, url: task_path(@task), method: :patch do |f|%>
-	<p>
-		<h3> Tâche </h3>
-		<%= f.text_field :task_title, class: 'field1', required: true %>
-		<h4> Despcription </h4>
-		<%= f.text_area :task_description, class: 'field2', required: true %>
-		<h4> Date d'échéance </h4>
-		<%= f.date_field :deadline, class: 'field1', required: true %>
-	</p>
 
-	<p>
-		<%= f.submit "Modifier", data:{ disable_with: 'Modification en cours
-		...' }, style: 'font-size:16px;vertical-align:middle;margin-top:20px;'%>
-	</p>
-	<p class="bouton"> <%= link_to "Retour", root_path %> </p>
+	<div class='field'>
+		<h4> Voici votre tâche : Que souhaitez vous modifier ?</h4>
+		<%= f.text_field :task_title, class: 'field1', required: true, placeholder: 'Intitulé' %>
+		<h5> Date d'échéance </h5>
+		<%= f.date_field :deadline, class: 'field1', required: true %>
+
+		<%= f.submit "Mettre à jour !", data:{ disable_with: 'Modification en cours
+		...' }, style: 'font-size:16px;vertical-align:middle;margin-top:20px;', class: 'button'%>
+	</div>
+
+	<hr style='margin-bottom:5vh;width:40%;'/>
+
+	<%= link_to "Retour", root_path %>
 
 	<% end%>
 </div>

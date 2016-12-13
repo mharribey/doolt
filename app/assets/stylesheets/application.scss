@@ -83,20 +83,11 @@ a:hover, a:focus {
     color:#4A4A4A;
   }
 
-  #add-task {
-
-  }
   #edit-profil{
     a{
       color:#4A4A4A;
-      &:hover {
-        filter:opacity(70%);
-      }
     }
     margin-left:80vh;
-  }
-  #quit {
-
   }
 
 .lead {
@@ -279,7 +270,7 @@ tbody {
   font-family: 'Coda', cursive;
   margin: auto;
   text-align: center;
-  color:white;
+  color:#4A4A4A;
   width:500px;
 }
 
