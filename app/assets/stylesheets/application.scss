@@ -24,10 +24,12 @@
 
 .barre {
   width:50%;
+  margin:0 auto;
 }
 
 h1 {
   color:#1794AC;
+  font-family: 'Coda', sans-serif;
 }
 
 .title { //H2 s'enregistrer se connecter
@@ -193,7 +195,7 @@ tbody {
 }
 
 .button {
-    width: 30vh;
+    width: 40vh;
     height:auto;
     vertical-align: middle;
     text-align: center;
@@ -237,7 +239,7 @@ tbody {
     background: transparent;
     margin-bottom: 10px;
     font: 16px 'Montserrat',Arial, Helvetica, sans-serif;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in;
     font-size:0.8em;
     text-align: center;
     height:auto;
@@ -294,6 +296,10 @@ tbody {
   margin:auto;
   padding:3vh 10vh;
   font-family: 'Roboto', sans-serif;
+  }
+
+  .home h2 {
+    margin: 2vh 0;
   }
 
 footer {

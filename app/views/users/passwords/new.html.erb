@@ -5,14 +5,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: 'field3' %>
+    <%= f.email_field :email, autofocus: true, class: 'field3', placeholder: 'Entrez votre mail' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Envoyer un mail de modification" ,style: 'font-size:16px;vertical-align:middle;margin-top:20px;' %>
+    <%= f.submit "Envoyer un mail de modification" ,style: 'font-size:16px;vertical-align:middle;margin:5vh 0;', class: 'button' %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= link_to 'Retour', root_path %>
 </div>
