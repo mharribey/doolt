@@ -7,7 +7,7 @@
 			<%= f.text_field :task_title, class: 'field1', required: true, placeholder: 'Intitulé' %>
 			<h5> Deadline </h5>
 			<%= f.date_field :deadline, class: 'field1', required: true %>
-			
+
 			<%= f.submit "Add", data: { disable_with: 'Ajout en cours
 			...'}, style: 'font-size:16px;vertical-align:middle;margin-top:20px;', class: 'button' %>
 		</div>

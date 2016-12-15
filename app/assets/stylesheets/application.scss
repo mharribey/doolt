@@ -79,7 +79,7 @@ a:hover, a:focus {
 }
   #main-title {
     font-size: 1.7em;
-    border-right: 1px solid #4A4A4A;
+    border-right: 1px solid #1794AC;
     margin:4vh 0vh;
     padding-right: 4vh;
     color:#4A4A4A;
@@ -156,12 +156,11 @@ th {
 
 tbody tr {
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom: 3vh;
+  margin: 3vh 0;
 }
 
 td {
   padding:5px;
-  // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 td,th {
@@ -171,6 +170,8 @@ td,th {
 
 thead {
   color:#1794AC;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
 tbody {
@@ -183,7 +184,31 @@ tbody {
   margin: auto;
   border-radius: 15px;
 }
+
 /* FORM */
+
+    .form {
+    color:#4A4A4A;
+    font: 13px 'Montserrat',Arial, Helvetica, sans-serif;    width:200px;
+    height:40px;
+    padding:2vh 0;
+    text-align: center;
+    display: inline-block;
+    border: transparent;
+    margin:auto;
+    transition: all 0.3s ease-in;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    border-bottom: 1px solid rgba(#4A4A4A,0.2);
+    background: transparent;
+  }
+    .form:focus {
+      border-bottom: 1px solid #1794AC;
+  }
+
 
 .field {
   width:40vh;
@@ -213,7 +238,7 @@ tbody {
 }
 
 #icon {
-  margin-left: 5vh;
+  margin-left: 4vh;
 }
 
 .field{
