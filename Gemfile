@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-
-gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
-gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 # Use sqlite3 as the database for Active Recordd
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
